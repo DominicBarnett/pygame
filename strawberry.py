@@ -18,5 +18,13 @@ class Strawberry(GameObject):
     self.rect.topleft = (self.x, self.y)
   
   def reset(self):
-    self.y = -64
-    self.x = choice(lanes)
+    choice_direction = choice(["down", "left"])
+    self.speed = (randint(0,200) / 100) + 1
+    if choice_direction == "down":
+      self.angle = 0
+      self.x = choice(lanes)
+      self.y = -64
+    elif choice_direction == "left":
+      self.angle = 3.14 / 2
+      self.x = -0
+      self.y = choice(lanes)

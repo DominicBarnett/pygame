@@ -31,6 +31,7 @@ bomb3 = Bomb()
 score = ScoreBoard(30, 30, 0)
 # Make a group
 all_sprites = pygame.sprite.Group()
+bombs = pygame.sprite.Group()
 # make a fruits Group
 fruit_sprites = pygame.sprite.Group()
 # Add sprites to group
@@ -44,6 +45,9 @@ all_sprites.add(strawberry3)
 all_sprites.add(bomb)
 all_sprites.add(bomb2)
 all_sprites.add(bomb3)
+bombs.add(bomb)
+bombs.add(bomb2)
+bombs.add(bomb3)
 all_sprites.add(score)
 fruit_sprites.add(apple)
 fruit_sprites.add(apple2)
@@ -82,7 +86,8 @@ while running:
     score.update(100)
     fruit.reset()
 # Check collision player and bomb
-  if pygame.sprite.collide_rect(player, bomb):
+  explode = pygame.sprite.spritecollideany(player, bombs)
+  if explode:
     running = False
   # Update the window
   pygame.display.flip()

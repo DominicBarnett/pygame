@@ -7,6 +7,7 @@ from apple import Apple
 from strawberry import Strawberry
 from bomb import Bomb
 from player import Player
+from scoreboard import ScoreBoard
 
 
 # from pygame.sprite import _Group
@@ -16,52 +17,7 @@ pygame.font.init()
 screen = pygame.display.set_mode([500, 500])
 clock = pygame.time.Clock()
 lanes = [93, 218, 343]
-# Create the game loop
-# Game Object
-class ScoreBoard(pygame.sprite.Sprite):
-    def __init__(self, x, y, score):
-       super(ScoreBoard, self).__init__()
-       self.score = score
-       self.font = pygame.font.SysFont('Comic Sans MS', 30)
-       self.surf = self.font.render(f"{self.score}", False, (0, 0, 0))
-       self.dx = 0
-       self.dy = 0
-       self.x = x
-       self.y = y
-	
-    def update(self, points):
-        self.score += points
 
-    def move(self):
-        self.x += self.dx
-        self.y += self.dy
-
-    def render(self, screen):
-        self.surf = self.font.render(f"{self.score}", False, (0, 0, 0))
-        screen.blit(self.surf, (self.x, self.y))
-
-    def reset(self):
-	    self.score = 0
-   
-   
-# class GameObject(pygame.sprite.Sprite):
-#   def __init__(self, x, y, image):
-#     super(GameObject, self).__init__()
-#     self.surf = pygame.image.load(image)
-#     self.x = x
-#     self.y = y
-#     self.angle = 0 # angle in radians
-#     self.speed = randint(2,10) # speed in pixels
-
-#   def render(self, screen):
-#     screen.blit(self.surf, (self.x, self.y))
-
-#   def move(self):
-#     self.x += math.sin(self.angle) * self.speed # calculate dx from angle and speed
-#     self.y += math.cos(self.angle) * self.speed # calculate dy from angle and speed
-
-
-# Make instances of GameObject and Apple
 apple = Apple()
 apple2 = Apple() 
 apple3 = Apple()

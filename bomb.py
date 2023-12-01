@@ -35,15 +35,4 @@ class Bomb(GameObject):
             self.dx = (randint(0, 200) / 100) + 1
             self.dy = 0
             
-
-    # def reset(self):
-    # direction = choice(u_or_d)
-    # if direction == 'up':
-    #   self.x = choice(lanes_x)
-    #   self.y = 670
-    #   self.dy = -speed
-    # else:
-    #   self.x = choice(lanes_x)
-    #   self.y = -70
-    #   self.dy = speed
         

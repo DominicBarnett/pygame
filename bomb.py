@@ -35,4 +35,5 @@ class Bomb(GameObject):
             self.dx = (randint(0, 200) / 100) + 1
             self.dy = 0
             
+
         

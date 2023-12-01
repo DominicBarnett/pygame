@@ -9,7 +9,7 @@ class GameObject(pygame.sprite.Sprite):
     self.x = x
     self.y = y
     self.angle = 0 # angle in radians
-    self.speed = randint(2,10) # speed in pixels
+    self.speed = randint(2,6) # speed in pixels
 
   def render(self, screen):
     screen.blit(self.surf, (self.x, self.y))

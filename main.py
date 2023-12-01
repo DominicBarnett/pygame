@@ -18,43 +18,22 @@ screen = pygame.display.set_mode([500, 500])
 clock = pygame.time.Clock()
 lanes = [93, 218, 343]
 
-apple = Apple()
-apple2 = Apple() 
-apple3 = Apple()
-strawberry = Strawberry()
-strawberry2 = Strawberry()
-strawberry3 = Strawberry()
+fruits_list = [Apple(), Apple(), Apple(), Strawberry(), Strawberry(), Strawberry()]
+bomb_list = [Bomb(), Bomb(), Bomb()]
 player = Player()
-bomb = Bomb()
-bomb2 = Bomb()
-bomb3 = Bomb()
 score = ScoreBoard(30, 30, 0)
-# Make a group
+
 all_sprites = pygame.sprite.Group()
 bombs = pygame.sprite.Group()
-# make a fruits Group
 fruit_sprites = pygame.sprite.Group()
-# Add sprites to group
+
+
 all_sprites.add(player)
-all_sprites.add(apple)
-all_sprites.add(apple2)
-all_sprites.add(apple3)
-all_sprites.add(strawberry)
-all_sprites.add(strawberry2)
-all_sprites.add(strawberry3)
-all_sprites.add(bomb)
-all_sprites.add(bomb2)
-all_sprites.add(bomb3)
-bombs.add(bomb)
-bombs.add(bomb2)
-bombs.add(bomb3)
+all_sprites.add(fruits_list)
+all_sprites.add(bomb_list)
+bombs.add(bomb_list)
 all_sprites.add(score)
-fruit_sprites.add(apple)
-fruit_sprites.add(apple2)
-fruit_sprites.add(apple3)
-fruit_sprites.add(strawberry)
-fruit_sprites.add(strawberry2)
-fruit_sprites.add(strawberry3)
+fruit_sprites.add(fruits_list)
 
 running = True
 while running:
